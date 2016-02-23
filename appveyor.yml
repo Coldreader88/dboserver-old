@@ -1,0 +1,18 @@
+version: '{branch} build {build}'
+os: Visual Studio 2013
+configuration: Release
+platform: Any CPU
+shallow_clone: true
+services: mysql56
+nuget:
+  account_feed: true
+  project_feed: true
+build:
+  verbosity: minimal
+artifacts:
+- path: $(configuration)\*.exe
+  name: dboserver Dev Builds
+- path: $(configuration)\*.dll
+  name: dboserver Dev Builds
+- path: $(configuration)\*.xml
+  name: dboserver Dev Builds
